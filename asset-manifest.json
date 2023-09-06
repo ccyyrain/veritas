@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ccyyrain/veritas/static/css/main.073c9b0a.css",
-    "main.js": "/ccyyrain/veritas/static/js/main.20f04e59.js",
+    "main.js": "/ccyyrain/veritas/static/js/main.d27ebc69.js",
     "static/js/787.0dfb499c.chunk.js": "/ccyyrain/veritas/static/js/787.0dfb499c.chunk.js",
     "index.html": "/ccyyrain/veritas/index.html",
     "main.073c9b0a.css.map": "/ccyyrain/veritas/static/css/main.073c9b0a.css.map",
-    "main.20f04e59.js.map": "/ccyyrain/veritas/static/js/main.20f04e59.js.map",
+    "main.d27ebc69.js.map": "/ccyyrain/veritas/static/js/main.d27ebc69.js.map",
     "787.0dfb499c.chunk.js.map": "/ccyyrain/veritas/static/js/787.0dfb499c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.20f04e59.js"
+    "static/js/main.d27ebc69.js"
   ]
 }
