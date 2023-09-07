@@ -35,7 +35,6 @@ const imgNames = [
   "EY_logo_2019.svg.png",
   "bernstein-logo.png",
   "CAF.jpg",
-  "KT.jpg",
   "Canoo.jpg",
 ];
 
@@ -70,7 +69,7 @@ const Content = styled.div<{ color?: string }>`
 
 const MyImage = styled.img`
   width: 100%;
-  max-width: 100px; // or any desired size
+  max-width: 150px;
   height: auto;
   display: block;
   margin: 0 auto;
@@ -102,11 +101,15 @@ export default function Team() {
       spacing={2}
       sx={{ backgroundColor: "white", color: "black" }}
     >
-      <Grid item xs={12} sx={{ marginTop: "56px" }}>
+      <Grid
+        item
+        xs={12}
+        sx={{ marginTop: "56px", padding: "0 15vw !important" }}
+      >
         <CenteredContent>
-          <Title>Team</Title>
+          <Title>Management Team</Title>
         </CenteredContent>
-        <Grid container spacing={3} sx={{ paddingLeft: 8, paddingRight: 8 }}>
+        <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <MyCard title="Steve Fan" content={textData.Steve} />
           </Grid>
@@ -121,15 +124,11 @@ export default function Team() {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item xs={12} sx={{ padding: "56px" }}>
+      <Grid item xs={12} sx={{ padding: "0 10vw 56px !important" }}>
         <CenteredContent>
           <Title>Our Prior Experience</Title>
         </CenteredContent>
-        <StyledGrid
-          container
-          spacing={3}
-          sx={{ paddingLeft: 8, paddingRight: 8 }}
-        >
+        <StyledGrid container spacing={1}>
           {images.map((src, index) => (
             <Grid item xs={6} sm={3} md={2} key={index}>
               <MyImage src={src} alt={`image-${index}`} />
@@ -137,11 +136,19 @@ export default function Team() {
           ))}
         </StyledGrid>
       </Grid>
-      <Grid item xs={12} sx={{ backgroundColor: "black", color: "white" }}>
+      <Grid
+        item
+        xs={12}
+        sx={{
+          backgroundColor: "black",
+          color: "white",
+          padding: "0 10vw !important",
+        }}
+      >
         <CenteredContent>
           <Title>Advisory Board</Title>
         </CenteredContent>
-        <Grid container spacing={3} sx={{ paddingLeft: 8, paddingRight: 8 }}>
+        <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
             <MyCard
               title="Jaekwang Chung"

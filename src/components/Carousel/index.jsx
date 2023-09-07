@@ -3,16 +3,6 @@ import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
-import {
-  Container,
-  Grid,
-  Card,
-  CardContent,
-  Typography,
-  Box,
-  Paper,
-  Divider,
-} from "@mui/material";
 
 import styled from "styled-components";
 
@@ -38,6 +28,7 @@ const ImageSlide = styled.div`
   background-image: url(${(props) => props.imageurl});
   background-size: cover;
   background-position: center;
+  opacity: 0.8;
 `;
 
 const TextOverlay = styled.div`
@@ -55,7 +46,7 @@ const TextOverlay = styled.div`
 `;
 
 const Title = styled.div`
-  font-size: 48px;
+  font-size: 64px;
   font-family: "League Spartan", arial, helvetica, sans-serif;
   font-weight: 700;
 `;

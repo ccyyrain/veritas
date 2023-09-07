@@ -84,8 +84,8 @@ export default function Home() {
           <Title>About Us</Title>
         </CenteredContent>
 
-        <Grid container spacing={0} sx={{ paddingLeft: 8, paddingRight: 8 }}>
-          <Grid item xs={12} sm={6} md={4}>
+        <Grid container spacing={0} sx={{ padding: "0 15vw !important" }}>
+          <Grid item sm={12} md={6} lg={4}>
             <MyCard
               title="Who We Are"
               content="We are a Hong Kong-based boutique investment advisory firm founded by a team of highly seasoned professionals from world leading private equity, investment banking, consulting and accounting firms. We are dedicated to help clients navigate ever-changing market dynamics and investment landscape by offering our unique expertise in private market transactions. "
@@ -94,7 +94,7 @@ export default function Home() {
               }
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item sm={12} md={6} lg={4}>
             <MyCard
               title="What We Do"
               content={doList}
@@ -104,7 +104,7 @@ export default function Home() {
               }
             />
           </Grid>
-          <Grid item xs={12} sm={6} md={4}>
+          <Grid item sm={12} md={6} lg={4}>
             <MyCard
               title="Our Strength"
               content="We are deeply rooted in China with global perspective. We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities. We offer penetrating vertical knowledge, deep transaction experience and strong access to industry leaders and prestigious financial investors."
