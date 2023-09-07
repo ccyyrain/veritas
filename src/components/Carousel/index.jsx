@@ -65,7 +65,6 @@ const Carousel = () => {
         <Title>Making Your Future a Success</Title>
         <SubTitle>Plan for tomorrow today!</SubTitle>
       </TextOverlay>
-
       <Swiper
         spaceBetween={0}
         slidesPerView={1}

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import { createTheme } from "@mui/material/styles";
+import { useLocation } from "react-router-dom";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -32,12 +33,23 @@ const ContentWrapper = styled.div`
   @apply mb-auto; /* This will push your footer to the bottom */
 `;
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null; // This component doesn't render anything
+}
+
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <CssBaseline />
       <Router>
+        <ScrollToTop />
         <MainLayout>
           <NavBar />
           <ContentWrapper>

@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { styled as mulStyled } from "@mui/material/styles";
 import {
   Container,
   Grid,
@@ -83,7 +82,6 @@ export default function Home() {
         <CenteredContent>
           <Title>About Us</Title>
         </CenteredContent>
-
         <Grid container spacing={0} sx={{ padding: "0 15vw !important" }}>
           <Grid item sm={12} md={6} lg={4}>
             <MyCard
