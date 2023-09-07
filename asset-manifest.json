@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/veritas/static/css/main.c5e6ee01.css",
-    "main.js": "/veritas/static/js/main.898b6ee2.js",
-    "static/js/787.0dfb499c.chunk.js": "/veritas/static/js/787.0dfb499c.chunk.js",
-    "index.html": "/veritas/index.html",
-    "main.c5e6ee01.css.map": "/veritas/static/css/main.c5e6ee01.css.map",
-    "main.898b6ee2.js.map": "/veritas/static/js/main.898b6ee2.js.map",
-    "787.0dfb499c.chunk.js.map": "/veritas/static/js/787.0dfb499c.chunk.js.map"
+    "main.css": "./static/css/main.c5e6ee01.css",
+    "main.js": "./static/js/main.fe44523a.js",
+    "static/js/787.0dfb499c.chunk.js": "./static/js/787.0dfb499c.chunk.js",
+    "index.html": "./index.html",
+    "main.c5e6ee01.css.map": "./static/css/main.c5e6ee01.css.map",
+    "main.fe44523a.js.map": "./static/js/main.fe44523a.js.map",
+    "787.0dfb499c.chunk.js.map": "./static/js/787.0dfb499c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c5e6ee01.css",
-    "static/js/main.898b6ee2.js"
+    "static/js/main.fe44523a.js"
   ]
 }
