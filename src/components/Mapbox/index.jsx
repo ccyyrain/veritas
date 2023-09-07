@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { styled as muiStyled } from "@mui/system";
-
 import Map, { NavigationControl, Marker } from "react-map-gl";
+import mapboxgl from "mapbox-gl"; // This is a dependency of react-map-gl even if you didn't explicitly install it
 import { Button } from "@mui/material";
 import NearMe from "@mui/icons-material/NearMe";
+
+mapboxgl.workerClass =
+  // eslint-disable-next-line import/no-webpack-loader-syntax
+  require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
 
 const StyledButton = muiStyled(Button)({
   backgroundColor: "black",
