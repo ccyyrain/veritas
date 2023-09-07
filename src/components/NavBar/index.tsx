@@ -54,7 +54,7 @@ export default function NavBar(props: Props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography
         variant="h6"
-        sx={{ my: 2, fontFamily: "Cabin, Arial, sans-serif" }}
+        sx={{ my: 2, fontFamily: "Cabin, Arial, sans-serif", fontSize: "22px" }}
       >
         Veritas Partners Asia
       </Typography>
@@ -63,7 +63,7 @@ export default function NavBar(props: Props) {
         {navItems.map((item) => (
           <ListItem key={item} disablePadding>
             <ListItemButton
-              sx={{ textAlign: "center" }}
+              sx={{ textAlign: "center", textTransform: "capitalize" }}
               component={Link}
               to={`/${navLinks[item]}`}
             >
@@ -88,7 +88,7 @@ export default function NavBar(props: Props) {
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+            sx={{ mr: 2, display: { xs: "block", md: "none" } }} // changed sm to md
           >
             <MenuIcon />
           </IconButton>
@@ -100,11 +100,12 @@ export default function NavBar(props: Props) {
               display: { xs: "none", sm: "block" },
               fontFamily: "Cabin, Arial, sans-serif",
               fontWeight: "700",
+              fontSize: "22px",
             }}
           >
             Veritas Partners Asia
           </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
+          <Box sx={{ display: { xs: "none", md: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} to={`/${navLinks[item]}`}>
                 <Button
@@ -134,7 +135,7 @@ export default function NavBar(props: Props) {
             keepMounted: true, // Better open performance on mobile.
           }}
           sx={{
-            display: { xs: "block", sm: "none" },
+            display: { xs: "block", md: "none" }, // changed sm to md
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,

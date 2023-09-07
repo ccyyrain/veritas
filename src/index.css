@@ -12,6 +12,31 @@ code {
     monospace;
 }
 
+/* Helvetica */
+/* @font-face {
+    font-family: 'Helvetica';
+    src: local('Helvetica'), url('/assets/fonts/Helvetica-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: local('Helvetica Bold'), url('/fonts/Helvetica-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+} */
+
+/* League Spartan */
+
+/* @font-face {
+  font-family: "League Spartan";
+  src: local("League Spartan Bold"),
+    url("/aseets/fonts/league-spartan-v11-latin-700.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+} */
+
 .mapboxgl-map {
   box-sizing: border-box;
 }

@@ -1,9 +1,8 @@
 import React from "react";
 import "./App.css";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { createTheme } from "@mui/material/styles";
 import { CssBaseline, ThemeProvider } from "@mui/material";
-
 // import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home";
@@ -13,13 +12,14 @@ import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Carousel from "./components/Carousel";
+import GlobalStyles from "./components/shared/GlobalStyles";
 
 const theme = createTheme({
   typography: {
     fontFamily: "'Helvetica', 'Arial', sans-serif",
   },
 });
+
 const MainLayout = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,6 +35,7 @@ const ContentWrapper = styled.div`
 const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyles />
       <CssBaseline />
       <Router>
         <MainLayout>

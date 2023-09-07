@@ -62,7 +62,7 @@ export default function Contact() {
           <Title>Contact Us</Title>
         </CenteredContent>
         <Grid container spacing={3}>
-          <Grid item md={12} lg={6}>
+          <Grid item sm={12} md={6}>
             <ContactUsContainer>
               <NameDiv>Veritas Partners Asia Limited</NameDiv>
               <AddressDiv>
@@ -74,7 +74,7 @@ export default function Contact() {
               </AddressDiv>
             </ContactUsContainer>
           </Grid>
-          <Grid item md={12} lg={6}>
+          <Grid item sm={12} md={6}>
             <MyImage
               src={`${process.env.PUBLIC_URL}/assets/imgs/HK.png`}
               alt={`hk`}

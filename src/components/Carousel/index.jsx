@@ -43,12 +43,14 @@ const TextOverlay = styled.div`
   align-items: center;
   z-index: 10; // to ensure the text is above the carousel
   color: white; // adjust as needed
+  padding: 16px;
 `;
 
 const Title = styled.div`
   font-size: 64px;
   font-family: "League Spartan", arial, helvetica, sans-serif;
   font-weight: 700;
+  text-align: center;
 `;
 
 const SubTitle = styled.div`
