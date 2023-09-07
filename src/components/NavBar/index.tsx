@@ -15,40 +15,34 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)<{ component?: string }>`
-  background-color: rgba(22, 22, 22, 0.9) !important;
+  background-color: rgba(22, 22, 22, 0.8) !important;
+  top: 0;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Helvetica, arial, sans-serif; !important
 `;
 
 interface Props {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window?: () => Window;
 }
 
-type NavKeys = "home" | "team" | "investment" | "contact";
+type NavKeys = "home" | "team" | "investment advisory" | "contact";
 
-const navItems: NavKeys[] = ["home", "team", "investment", "contact"];
+const navItems: NavKeys[] = ["home", "team", "investment advisory", "contact"];
 
 const navLinks: Record<NavKeys, string> = {
   home: "",
   team: "team",
-  investment: "investment-advisory",
+  "investment advisory": "investment-advisory",
   contact: "contact",
 };
 
 const drawerWidth = 240;
-// const navItems = ["home", "team", "investment advisory", "contact"];
-// const navLinks = {
-//   home: "",
-//   team: "team",
-//   investment: "investment-advisory",
-//   contact: "contact",
-// };
-
 export default function NavBar(props: Props) {
+  const location = useLocation();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -58,7 +52,10 @@ export default function NavBar(props: Props) {
 
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography
+        variant="h6"
+        sx={{ my: 2, fontFamily: "Cabin, Arial, sans-serif" }}
+      >
         Veritas Partners Asia
       </Typography>
       <Divider />
@@ -82,10 +79,9 @@ export default function NavBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, overflowY: "visible" }}>
       <CssBaseline />
-      {/* <AppBar component="nav"> */}
-      <StyledAppBar component="nav" position="static">
+      <StyledAppBar component="nav" position="fixed">
         <Toolbar>
           <IconButton
             color="inherit"
@@ -99,14 +95,28 @@ export default function NavBar(props: Props) {
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", sm: "block" },
+              fontFamily: "Cabin, Arial, sans-serif",
+              fontWeight: "700",
+            }}
           >
             Veritas Partners Asia
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
               <Link key={item} to={`/${navLinks[item]}`}>
-                <Button key={item} sx={{ color: "#fff" }}>
+                <Button
+                  key={item}
+                  sx={{
+                    color: "#fff",
+                    fontWeight:
+                      location.pathname === `/${navLinks[item]}`
+                        ? "bold"
+                        : "normal",
+                  }}
+                >
                   {item}
                 </Button>
               </Link>
@@ -134,10 +144,6 @@ export default function NavBar(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-      {/* <Box component="main" sx={{ p: 3 }}>
-        <Toolbar />
-        <Typography></Typography>
-      </Box> */}
     </Box>
   );
 }

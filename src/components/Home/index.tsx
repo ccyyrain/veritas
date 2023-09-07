@@ -11,14 +11,17 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import Carousel from "../Carousel";
 
-const Item = mulStyled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
+type CardProps = {
+  title: string;
+  content: React.ReactNode;
+  imageUrl: string;
+};
+
+type StyledCardProps = {
+  imageUrl: string;
+};
 
 const CenteredContent = styled.div`
   display: flex;
@@ -27,27 +30,47 @@ const CenteredContent = styled.div`
   flex-direction: column; // This is the key change
 `;
 
-const StyledCard = styled(Box)`
+const StyledCard = styled(Box)<StyledCardProps>`
+  min-height: 700px;
+  height: 100%;
   border: none;
   box-shadow: none;
   border-radius: 0; // to remove rounded corners
+  background-image: url(${(props) => props.imageUrl});
+  background-size: cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  @media (max-width: 960px) {
+    // This is the default breakpoint for md in MUI
+    min-height: 500px;
+  }
 `;
 
-type CardProps = {
-  title: string;
-  content: React.ReactNode;
-};
+const CardTitle = styled.div`
+  font-size: 30px;
+  font-family: Helvetica, arial, sans-serif;
+  margin-bottom: 12px;
+`;
 
-const MyCard: React.FC<CardProps> = ({ title, content }) => {
+const Content = styled.div`
+  font-size: 22px;
+  font-family: Helvetica, arial, sans-serif;
+`;
+
+const Title = styled.div`
+  font-size: 48px;
+  font-family: "League Spartan", arial, helvetica, sans-serif;
+  font-weight: 700;
+  margin: 48px 0;
+`;
+
+const MyCard: React.FC<CardProps> = ({ title, content, imageUrl }) => {
   return (
-    <StyledCard>
+    <StyledCard imageUrl={imageUrl}>
       <CardContent>
-        <Typography variant="h5" component="div" mb={3}>
-          {title}
-        </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {content}
-        </Typography>
+        <CardTitle>{title}</CardTitle>
+        <Content>{content}</Content>
       </CardContent>
     </StyledCard>
   );
@@ -72,38 +95,47 @@ const doList = (
 
 export default function Home() {
   return (
-    <Grid container spacing={2}>
+    <Grid
+      container
+      spacing={2}
+      sx={{ backgroundColor: "black", color: "white" }}
+    >
       <Grid item xs={12}>
-        <CenteredContent>
+        <Carousel />
+        {/* <CenteredContent>
           <Typography variant="h3" gutterBottom>
             Making Your Future a Success
           </Typography>
           <Typography variant="body2" color="text.secondary">
             Plan for tomorrow today!
           </Typography>
-        </CenteredContent>
+        </CenteredContent> */}
       </Grid>
-      <Grid item xs={12}>
+      <Grid item xs={12} sx={{ marginBottom: "36px" }}>
         <CenteredContent>
-          <Typography variant="h3" gutterBottom>
-            About us
-          </Typography>
+          <Title>About Us</Title>
         </CenteredContent>
 
-        <Grid container spacing={3} sx={{ paddingLeft: 8, paddingRight: 8 }}>
+        <Grid container spacing={0} sx={{ paddingLeft: 8, paddingRight: 8 }}>
           <Grid item xs={6} md={4}>
             <MyCard
               title="Who We Are"
               content="We are a Hong Kong-based boutique investment advisory firm founded by a team of highly seasoned professionals from world leading private equity, investment banking, consulting and accounting firms. We are dedicated to help clients navigate ever-changing market dynamics and investment landscape by offering our unique expertise in private market transactions. "
+              imageUrl={"/assets/imgs/carousel/Great_Wall.jpg"}
             />
           </Grid>
           <Grid item xs={6} md={4}>
-            <MyCard title="What We Do" content={doList} />
+            <MyCard
+              title="What We Do"
+              content={doList}
+              imageUrl={"/assets/imgs/carousel/Forbidden_City2.jpg"}
+            />
           </Grid>
           <Grid item xs={6} md={4}>
             <MyCard
               title="Our Strength"
               content="We are deeply rooted in China with global perspective. We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities. We offer penetrating vertical knowledge, deep transaction experience and strong access to industry leaders and prestigious financial investors."
+              imageUrl={"/assets/imgs/carousel/Temple_of_Heaven.jpg"}
             />
           </Grid>
         </Grid>
