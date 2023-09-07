@@ -19,13 +19,6 @@ import styled from "styled-components";
 // Initialize Swiper modules
 SwiperCore.use([Pagination, Autoplay]);
 
-// const images = [
-//   require("../../assets/imgs/carousel/Forbidden_City.jpg").default,
-//   require("../../assets/imgs/carousel/Forbidden_City2.jpg").default,
-//   require("../../assets/imgs/carousel/Great_Wall.jpg").default,
-//   require("../../assets/imgs/carousel/Temple_of_Heaven.jpg").default,
-// ];
-
 const images = [
   process.env.PUBLIC_URL + "/assets/imgs/carousel/Forbidden_City.jpg",
   process.env.PUBLIC_URL + "/assets/imgs/carousel/Forbidden_City2.jpg",
@@ -91,10 +84,6 @@ const Carousel = () => {
             <ImageSlide imageurl={img} />
           </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <ImageSlide />
-        </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide> */}
       </Swiper>
     </CarouselWrapper>
   );
