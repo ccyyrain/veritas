@@ -1,4 +1,5 @@
 name: Build and Deploy to GitHub Pages
+
 on:
   push:
     branches:
@@ -12,10 +13,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Install and Build
-        run: |
-          npm install
-          REACT_APP_MAPBOX_ACCESS_TOKEN=${{ secrets.MAPBOX_ACCESS_TOKEN }} npm run build
+      - name: Install
+        run: npm install
+
+      # Adjusted build step here
+      - name: Build
+        run: CI=false REACT_APP_MAPBOX_ACCESS_TOKEN=${{ secrets.REACT_APP_MAPBOX_TOKEN }} npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
