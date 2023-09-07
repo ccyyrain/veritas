@@ -20,17 +20,17 @@ import styled from "styled-components";
 SwiperCore.use([Pagination, Autoplay]);
 
 // const images = [
-//   require("/public/assets/imgs/carousel/Forbidden_City.jpg").default,
-//   require("/public/assets/imgs/carousel/Forbidden_City2.jpg").default,
-//   require("/public/assets/imgs/carousel/Great_Wall.jpg").default,
-//   require("/public/assets/imgs/carousel/Temple_of_Heaven.jpg").default,
+//   require("../../assets/imgs/carousel/Forbidden_City.jpg").default,
+//   require("../../assets/imgs/carousel/Forbidden_City2.jpg").default,
+//   require("../../assets/imgs/carousel/Great_Wall.jpg").default,
+//   require("../../assets/imgs/carousel/Temple_of_Heaven.jpg").default,
 // ];
 
 const images = [
-  "/assets/imgs/carousel/Forbidden_City.jpg",
-  "/assets/imgs/carousel/Forbidden_City2.jpg",
-  "/assets/imgs/carousel/Great_Wall.jpg",
-  "/assets/imgs/carousel/Temple_of_Heaven.jpg",
+  process.env.PUBLIC_URL + "/assets/imgs/carousel/Forbidden_City.jpg",
+  process.env.PUBLIC_URL + "/assets/imgs/carousel/Forbidden_City2.jpg",
+  process.env.PUBLIC_URL + "/assets/imgs/carousel/Great_Wall.jpg",
+  process.env.PUBLIC_URL + "/assets/imgs/carousel/Temple_of_Heaven.jpg",
 ];
 
 const CarouselWrapper = styled.div`
@@ -42,7 +42,7 @@ const CarouselWrapper = styled.div`
 const ImageSlide = styled.div`
   width: 100%;
   height: 85vh;
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.imageurl});
   background-size: cover;
   background-position: center;
 `;
@@ -88,7 +88,7 @@ const Carousel = () => {
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>
-            <ImageSlide imageUrl={img} />
+            <ImageSlide imageurl={img} />
           </SwiperSlide>
         ))}
         {/* <SwiperSlide>

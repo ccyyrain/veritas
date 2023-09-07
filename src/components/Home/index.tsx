@@ -121,21 +121,29 @@ export default function Home() {
             <MyCard
               title="Who We Are"
               content="We are a Hong Kong-based boutique investment advisory firm founded by a team of highly seasoned professionals from world leading private equity, investment banking, consulting and accounting firms. We are dedicated to help clients navigate ever-changing market dynamics and investment landscape by offering our unique expertise in private market transactions. "
-              imageUrl={"/assets/imgs/carousel/Great_Wall.jpg"}
+              imageUrl={
+                process.env.PUBLIC_URL + "/assets/imgs/carousel/Great_Wall.jpg"
+              }
             />
           </Grid>
           <Grid item xs={6} md={4}>
             <MyCard
               title="What We Do"
               content={doList}
-              imageUrl={"/assets/imgs/carousel/Forbidden_City2.jpg"}
+              imageUrl={
+                process.env.PUBLIC_URL +
+                "/assets/imgs/carousel/Forbidden_City2.jpg"
+              }
             />
           </Grid>
           <Grid item xs={6} md={4}>
             <MyCard
               title="Our Strength"
               content="We are deeply rooted in China with global perspective. We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities. We offer penetrating vertical knowledge, deep transaction experience and strong access to industry leaders and prestigious financial investors."
-              imageUrl={"/assets/imgs/carousel/Temple_of_Heaven.jpg"}
+              imageUrl={
+                process.env.PUBLIC_URL +
+                "/assets/imgs/carousel/Temple_of_Heaven.jpg"
+              }
             />
           </Grid>
         </Grid>
