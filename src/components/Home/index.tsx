@@ -16,33 +16,26 @@ import { CardTitle, Content, Title, CenteredContent } from "../shared/styled";
 type CardProps = {
   title: string;
   content: React.ReactNode;
-  imageUrl: string;
 };
 
 type StyledCardProps = {
   imageUrl: string;
 };
 
-const StyledCard = styled(Box)<StyledCardProps>`
-  min-height: 700px;
+const StyledCard = styled(Box)`
+  // min-height: 600px;
   height: 100%;
   border: none;
   box-shadow: none;
   border-radius: 0; // to remove rounded corners
-  background-image: url(${(props) => props.imageUrl});
-  background-size: cover;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  @media (max-width: 960px) {
-    // This is the default breakpoint for md in MUI
-    min-height: 500px;
-  }
+  // @media (max-width: 960px) {
+  //   min-height: 100px;
+  // }
 `;
 
-const MyCard: React.FC<CardProps> = ({ title, content, imageUrl }) => {
+const MyCard: React.FC<CardProps> = ({ title, content }) => {
   return (
-    <StyledCard imageUrl={imageUrl}>
+    <StyledCard>
       <CardContent>
         <CardTitle>{title}</CardTitle>
         <Content>{content}</Content>
@@ -82,34 +75,20 @@ export default function Home() {
         <CenteredContent>
           <Title>About Us</Title>
         </CenteredContent>
-        <Grid container spacing={0} sx={{ padding: "0 15vw !important" }}>
+        <Grid container spacing={3} sx={{ padding: "0 15vw !important" }}>
           <Grid item sm={12} md={6} lg={4}>
             <MyCard
               title="Who We Are"
               content="We are a Hong Kong-based boutique investment advisory firm founded by a team of highly seasoned professionals from world leading private equity, investment banking, consulting and accounting firms. We are dedicated to help clients navigate ever-changing market dynamics and investment landscape by offering our unique expertise in private market transactions. "
-              imageUrl={
-                process.env.PUBLIC_URL + "/assets/imgs/carousel/Great_Wall.jpg"
-              }
             />
           </Grid>
           <Grid item sm={12} md={6} lg={4}>
-            <MyCard
-              title="What We Do"
-              content={doList}
-              imageUrl={
-                process.env.PUBLIC_URL +
-                "/assets/imgs/carousel/Forbidden_City2.jpg"
-              }
-            />
+            <MyCard title="What We Do" content={doList} />
           </Grid>
           <Grid item sm={12} md={6} lg={4}>
             <MyCard
               title="Our Strength"
               content="We are deeply rooted in China with global perspective. We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities. We offer penetrating vertical knowledge, deep transaction experience and strong access to industry leaders and prestigious financial investors."
-              imageUrl={
-                process.env.PUBLIC_URL +
-                "/assets/imgs/carousel/Temple_of_Heaven.jpg"
-              }
             />
           </Grid>
         </Grid>

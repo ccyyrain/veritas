@@ -1,7 +1,7 @@
 import React from "react";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Pagination, Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/swiper-bundle.css";
 
 import styled from "styled-components";
@@ -44,6 +44,7 @@ const TextOverlay = styled.div`
   z-index: 10; // to ensure the text is above the carousel
   color: white; // adjust as needed
   padding: 16px;
+  height: 95%;
 `;
 
 const Title = styled.div`
@@ -51,11 +52,18 @@ const Title = styled.div`
   font-family: "League Spartan", arial, helvetica, sans-serif;
   font-weight: 700;
   text-align: center;
+  @media (max-width: 900px) {
+    font-size: 48px;
+  }
 `;
 
 const SubTitle = styled.div`
   font-size: 22px;
   font-family: Helvetica, arial, sans-serif;
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
 `;
 
 const Carousel = () => {
@@ -67,9 +75,10 @@ const Carousel = () => {
       </TextOverlay>
       <Swiper
         spaceBetween={0}
-        slidesPerView={1}
-        autoplay={{ delay: 5000 }}
+        centeredSlides={true}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
+        modules={[Autoplay, Pagination]}
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>

@@ -29,13 +29,14 @@ const imgNames = [
   "CDH logo_01.png",
   "JPM.png",
   "Hitone Logo.jpg",
+  "CAF.jpg",
   "IBM_logo.svg",
   "PricewaterhouseCoopers_Logo.png",
   "KPMG_logo.svg.png",
   "EY_logo_2019.svg.png",
   "bernstein-logo.png",
-  "CAF.jpg",
   "Canoo.jpg",
+  "tenneco.svg",
 ];
 
 const images = imgNames.map(
@@ -67,12 +68,19 @@ const Content = styled.div<{ color?: string }>`
   color: ${(props) => props.color || "rgb(94, 94, 94)"};
 `;
 
-const MyImage = styled.img`
-  width: 100%;
-  max-width: 150px;
-  height: auto;
+const MyImage = styled.img<{ index: number }>`
+  width: 100%; // takes full width, but doesn't exceed max-width
+  max-width: 110px; // maximum width
+  height: auto; // maintains the aspect ratio based on the width
+  object-fit: contain; // ensures the image maintains its original aspect ratio
   display: block;
   margin: 0 auto;
+
+  ${({ index }) =>
+    [4, 6, 8].includes(index) &&
+    `
+    max-width: 100px;  // or any other styles
+  `}
 `;
 
 const StyledGrid = styled(Grid)`
@@ -111,10 +119,10 @@ export default function Team() {
         </CenteredContent>
         <Grid container spacing={3}>
           <Grid item xs={12} md={6}>
-            <MyCard title="Steve Fan" content={textData.Steve} />
+            <MyCard title="Bill Yang" content={textData.Bill} />
           </Grid>
           <Grid item xs={12} md={6}>
-            <MyCard title="Bill Yang" content={textData.Bill} />
+            <MyCard title="Steve Fan" content={textData.Steve} />
           </Grid>
           <Grid item xs={12} md={6}>
             <MyCard title="Tian Zhen" content={textData.Zhen} />
@@ -131,7 +139,7 @@ export default function Team() {
         <StyledGrid container spacing={1}>
           {images.map((src, index) => (
             <Grid item xs={6} sm={3} md={2} key={index}>
-              <MyImage src={src} alt={`image-${index}`} />
+              <MyImage src={src} alt={`image-${index}`} index={index} />
             </Grid>
           ))}
         </StyledGrid>

@@ -4,11 +4,19 @@ export const CardTitle = styled.div`
   font-size: 30px;
   font-family: Helvetica, arial, sans-serif;
   margin-bottom: 12px;
+
+  @media (max-width: 900px) {
+    font-size: 22px;
+  }
 `;
 
 export const Content = styled.div`
   font-size: 22px;
   font-family: Helvetica, arial, sans-serif;
+
+  @media (max-width: 900px) {
+    font-size: 16px;
+  }
 `;
 
 export const Title = styled.div`
@@ -16,6 +24,9 @@ export const Title = styled.div`
   font-family: "League Spartan", arial, helvetica, sans-serif;
   font-weight: 700;
   margin: 48px 0;
+  @media (max-width: 900px) {
+    font-size: 36px;
+  }
 `;
 
 export const CenteredContent = styled.div`

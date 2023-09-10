@@ -36,7 +36,6 @@ const crossBorderImg = [
   "CFOCN.jpg",
   "ibs.png",
   "Kith.png",
-  "OnlineMedEd.png",
 ];
 
 const chinaInvestImg = [
@@ -97,7 +96,7 @@ const SectorTitle = styled.div`
 
 const MyImage = styled.img`
   width: 100%;
-  max-width: 150px; // or any desired size
+  max-width: 100px; // or any desired size
   height: auto;
   display: block;
   margin: 0 auto;

@@ -25,6 +25,7 @@ const MainLayout = styled.div`
   display: flex;
   flex-direction: column;
   height: auto; /* Allow it to expand beyond viewport if content is longer */
+  min-height: 100vh; /* This ensures it takes up the full viewport height */
 `;
 
 const ContentWrapper = styled.div`

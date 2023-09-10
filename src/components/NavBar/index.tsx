@@ -18,7 +18,7 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
 const StyledAppBar = styled(AppBar)<{ component?: string }>`
-  background-color: rgba(22, 22, 22, 0.8) !important;
+  background-color: rgba(34, 64, 104, 0.8) !important;
   top: 0;
   font-size: 14px;
   font-weight: 700;
