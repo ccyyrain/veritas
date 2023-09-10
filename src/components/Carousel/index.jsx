@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import SwiperCore from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import "swiper/css/effect-fade";
 
 import styled from "styled-components";
 
@@ -14,6 +15,25 @@ const images = [
   process.env.PUBLIC_URL + "/assets/imgs/carousel/Forbidden_City2.jpg",
   process.env.PUBLIC_URL + "/assets/imgs/carousel/Great_Wall.jpg",
   process.env.PUBLIC_URL + "/assets/imgs/carousel/Temple_of_Heaven.jpg",
+];
+
+const TEXTS = [
+  {
+    title: "Your Private Market Transaction Expert in Asia",
+    subt: "Bespoke Investment Advisory Service",
+  },
+  {
+    title: "Transaction Expert",
+    subt: "A full team of top private equity, investment banking, accounting, legal and sector experts providing tailored transaction service",
+  },
+  {
+    title: "Private Market Expert",
+    subt: "We help you navigate ever-changing market dynamics and investment landscape by offering unique expertise in private market.",
+  },
+  {
+    title: "Greater China and Cross Border Expert",
+    subt: "We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities.",
+  },
 ];
 
 const CarouselWrapper = styled.div`
@@ -33,27 +53,35 @@ const ImageSlide = styled.div`
 
 const TextOverlay = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: ${(props) => (props.index === 0 ? "inherit" : "fit-content")};
+  top: ${(props) => (props.index === 0 ? "50%" : "70%")};
+  left: ${(props) => (props.index === 0 ? "50%" : "35%")};
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   z-index: 10; // to ensure the text is above the carousel
   color: white; // adjust as needed
   padding: 16px;
-  height: 95%;
+  justify-content: center;
+  // align-items: center;
+  // justify-content: ${(props) => (props.index === 0 ? "center" : "left")};
+  align-items: ${(props) => (props.index === 0 ? "center" : "left")};
+  text-align: ${(props) => (props.index === 0 ? "center" : "left")};
+  // text-align: center; // Center text content
+  background-color: rgba(34, 64, 104, 0.8) !important;
 `;
 
 const Title = styled.div`
-  font-size: 64px;
+  font-size: 60px;
   font-family: "League Spartan", arial, helvetica, sans-serif;
   font-weight: 700;
-  text-align: center;
+  // text-align: center;
+  text-align: ${(props) => (props.index === 0 ? "center" : "left")};
   @media (max-width: 900px) {
     font-size: 48px;
+  }
+  @media (max-width: 600px) {
+    font-size: 32px;
   }
 `;
 
@@ -67,18 +95,22 @@ const SubTitle = styled.div`
 `;
 
 const Carousel = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <CarouselWrapper>
-      <TextOverlay>
-        <Title>Making Your Future a Success</Title>
-        <SubTitle>Plan for tomorrow today!</SubTitle>
+      <TextOverlay index={currentIndex}>
+        <Title index={currentIndex}>{TEXTS[currentIndex].title}</Title>
+        <SubTitle>{TEXTS[currentIndex].subt}</SubTitle>
       </TextOverlay>
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
         autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
-        modules={[Autoplay, Pagination]}
+        effect={"fade"}
+        fadeEffect={{ crossFade: true }}
+        modules={[EffectFade, Autoplay, Pagination]}
+        onSlideChange={(swiper) => setCurrentIndex(swiper.activeIndex)} // Listen for slide changes
       >
         {images.map((img, index) => (
           <SwiperSlide key={index}>

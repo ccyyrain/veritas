@@ -125,7 +125,7 @@ export default function Team() {
             <MyCard title="Steve Fan" content={textData.Steve} />
           </Grid>
           <Grid item xs={12} md={6}>
-            <MyCard title="Tian Zhen" content={textData.Zhen} />
+            <MyCard title="Zhen Tian" content={textData.Zhen} />
           </Grid>
           <Grid item xs={12} md={6}>
             <MyCard title="Locke Cheng" content={textData.Locke} />
