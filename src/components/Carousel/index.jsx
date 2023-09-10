@@ -53,10 +53,10 @@ const ImageSlide = styled.div`
 
 const TextOverlay = styled.div`
   position: absolute;
-  width: ${(props) => (props.index === 0 ? "inherit" : "fit-content")};
-  top: ${(props) => (props.index === 0 ? "50%" : "70%")};
-  left: ${(props) => (props.index === 0 ? "50%" : "35%")};
-  transform: translate(-50%, -50%);
+  width: ${(props) => (props.index === 0 ? "inherit" : "85%")};
+  top: ${(props) => (props.index === 0 ? "50%" : "60%")};
+  left: ${(props) => (props.index === 0 ? "0" : "5%")};
+  // transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   z-index: 10; // to ensure the text is above the carousel
