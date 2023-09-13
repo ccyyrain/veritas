@@ -112,7 +112,7 @@ export default function Team() {
       <Grid
         item
         xs={12}
-        sx={{ marginTop: "56px", padding: "0 15vw !important" }}
+        sx={{ marginTop: "56px", padding: "48px 15vw 0 !important" }}
       >
         <CenteredContent>
           <Title>Management Team</Title>

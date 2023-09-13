@@ -49,12 +49,15 @@ const ImageSlide = styled.div`
   background-size: cover;
   background-position: center;
   opacity: 0.8;
+  @media (max-width: 900px) {
+    height: 100vh;
+  }
 `;
 
 const TextOverlay = styled.div`
   position: absolute;
-  width: ${(props) => (props.index === 0 ? "inherit" : "85%")};
-  top: ${(props) => (props.index === 0 ? "50%" : "60%")};
+  width: ${(props) => (props.index === 0 ? "inherit" : "75%")};
+  bottom: ${(props) => (props.index === 0 ? "30%" : "20%")};
   left: ${(props) => (props.index === 0 ? "0" : "5%")};
   // transform: translate(-50%, -50%);
   display: flex;
@@ -69,6 +72,7 @@ const TextOverlay = styled.div`
   text-align: ${(props) => (props.index === 0 ? "center" : "left")};
   // text-align: center; // Center text content
   background-color: rgba(34, 64, 104, 0.8) !important;
+  max-width: ${(props) => (props.index === 0 ? "inherit" : "600px")};
 `;
 
 const Title = styled.div`

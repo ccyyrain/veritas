@@ -83,21 +83,11 @@ export default function NavBar(props: Props) {
       <CssBaseline />
       <StyledAppBar component="nav" position="fixed">
         <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { xs: "block", md: "none" } }} // changed sm to md
-          >
-            <MenuIcon />
-          </IconButton>
           <Typography
             variant="h6"
             component="div"
             sx={{
               flexGrow: 1,
-              display: { xs: "none", sm: "block" },
               fontFamily: "Cabin, Arial, sans-serif",
               fontWeight: "700",
               fontSize: "22px",
@@ -123,6 +113,15 @@ export default function NavBar(props: Props) {
               </Link>
             ))}
           </Box>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="end"
+            onClick={handleDrawerToggle}
+            sx={{ mr: 2, display: { xs: "block", md: "none" } }} // changed sm to md
+          >
+            <MenuIcon />
+          </IconButton>
         </Toolbar>
       </StyledAppBar>
       <nav>
