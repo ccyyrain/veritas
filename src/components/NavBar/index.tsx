@@ -22,7 +22,7 @@ const StyledAppBar = styled(AppBar)<{ component?: string }>`
   top: 0;
   font-size: 14px;
   font-weight: 700;
-  font-family: Helvetica, arial, sans-serif; !important
+  font-family: Roboto, arial, sans-serif; !important
 `;
 
 interface Props {

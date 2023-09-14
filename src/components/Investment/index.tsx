@@ -97,9 +97,11 @@ const SectorTitle = styled.div`
 const MyImage = styled.img`
   width: 100%;
   max-width: 100px; // or any desired size
-  height: auto;
+  // height: auto
+  height: 80px;
   display: block;
   margin: 0 auto;
+  object-fit: contain; // ensures the image maintains its original aspect ratio
 `;
 
 export default function Investment() {

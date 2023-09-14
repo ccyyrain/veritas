@@ -77,7 +77,7 @@ const TextOverlay = styled.div`
 
 const Title = styled.div`
   font-size: 60px;
-  font-family: "League Spartan", arial, helvetica, sans-serif;
+  font-family: Roboto, arial, helvetica, sans-serif;
   font-weight: 700;
   // text-align: center;
   text-align: ${(props) => (props.index === 0 ? "center" : "left")};
@@ -91,7 +91,7 @@ const Title = styled.div`
 
 const SubTitle = styled.div`
   font-size: 22px;
-  font-family: Helvetica, arial, sans-serif;
+  font-family: Roboto, arial, sans-serif;
 
   @media (max-width: 900px) {
     font-size: 16px;

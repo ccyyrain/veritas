@@ -64,7 +64,7 @@ const StyledCard = styled(Box)`
 const Content = styled.div<{ color?: string }>`
   white-space: pre-line;
   font-size: 16px;
-  font-family: Helvetica, arial, sans-serif;
+  font-family: Roboto, arial, sans-serif;
   color: ${(props) => props.color || "rgb(94, 94, 94)"};
 `;
 

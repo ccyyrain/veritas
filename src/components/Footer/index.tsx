@@ -29,7 +29,7 @@ const Copyright = styled.div`
   color: rgb(169, 169, 169);
   text-align: center;
   font-size: 14px;
-  font-family: Helvetica, arial, sans-serif;
+  font-family: Roboto, arial, sans-serif;
 `;
 
 const Footer = () => {
