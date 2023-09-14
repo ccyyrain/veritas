@@ -26,7 +26,7 @@ const textData: Partial<TextData> = rawData;
 
 const imgNames = [
   "Hillhouse Logo.jpg",
-  "CDH logo_01.png",
+  "dh.jpeg",
   "JPM.png",
   "Hitone Logo.jpg",
   "CAF.jpg",
@@ -70,16 +70,23 @@ const Content = styled.div<{ color?: string }>`
 
 const MyImage = styled.img<{ index: number }>`
   width: 100%; // takes full width, but doesn't exceed max-width
-  max-width: 110px; // maximum width
-  height: auto; // maintains the aspect ratio based on the width
+  max-width: 120px; // maximum width
+  // height: auto; // maintains the aspect ratio based on the width
   object-fit: contain; // ensures the image maintains its original aspect ratio
   display: block;
   margin: 0 auto;
+  height: 100px;
+  ${({ index }) =>
+    [0].includes(index) &&
+    `
+    max-width: 150px;  // or any other styles
+  `}
 
   ${({ index }) =>
     [4, 6, 8].includes(index) &&
     `
-    max-width: 100px;  // or any other styles
+    //CAF, PWC, EY
+    max-width: 80px;  // or any other styles
   `}
 `;
 

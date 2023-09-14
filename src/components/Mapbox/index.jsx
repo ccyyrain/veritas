@@ -19,7 +19,7 @@ const StyledButton = muiStyled(Button)({
   display: "flex",
   alignItems: "center",
   fontSize: "12px",
-  fontFamily: "Helvetica, arial, sans-serif",
+  fontFamily: "Roboto, arial, sans-serif",
   fontWeight: 700,
   letterSpacing: "0.85px",
 });

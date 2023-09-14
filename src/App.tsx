@@ -17,7 +17,7 @@ import GlobalStyles from "./components/shared/GlobalStyles";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "'Helvetica', 'Arial', sans-serif",
+    fontFamily: "'Roboto', 'Arial', sans-serif",
   },
 });
 

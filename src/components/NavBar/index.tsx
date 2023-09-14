@@ -54,7 +54,11 @@ export default function NavBar(props: Props) {
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography
         variant="h6"
-        sx={{ my: 2, fontFamily: "Cabin, Arial, sans-serif", fontSize: "22px" }}
+        sx={{
+          my: 2,
+          fontFamily: "Roboto, Arial, sans-serif",
+          fontSize: "22px",
+        }}
       >
         Veritas Partners Asia
       </Typography>
@@ -88,7 +92,7 @@ export default function NavBar(props: Props) {
             component="div"
             sx={{
               flexGrow: 1,
-              fontFamily: "Cabin, Arial, sans-serif",
+              fontFamily: "Roboto, Arial, sans-serif",
               fontWeight: "700",
               fontSize: "22px",
             }}
