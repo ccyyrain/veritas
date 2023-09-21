@@ -23,15 +23,18 @@ const TEXTS = [
     subt: "Bespoke Investment Advisory Service",
   },
   {
-    title: "Transaction Expert",
+    // title: "",
+    // title: "Transaction Expert",
     subt: "A full team of top private equity, investment banking, accounting, legal and sector experts providing tailored transaction service",
   },
   {
-    title: "Private Market Expert",
+    // title: "Private Market Expert",
+    title: "",
     subt: "We help you navigate ever-changing market dynamics and investment landscape by offering unique expertise in private market.",
   },
   {
-    title: "Greater China and Cross Border Expert",
+    // title: "Greater China and Cross Border Expert",
+    title: "",
     subt: "We connect global capital to quality assets in Greater China and we help China-based investors capture global opportunities.",
   },
 ];
@@ -90,11 +93,12 @@ const Title = styled.div`
 `;
 
 const SubTitle = styled.div`
-  font-size: 22px;
+  font-size: 28px;
   font-family: Roboto, arial, sans-serif;
+  font-weight: 700;
 
   @media (max-width: 900px) {
-    font-size: 16px;
+    font-size: 22px;
   }
 `;
 

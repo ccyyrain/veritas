@@ -31,7 +31,8 @@ interface Props {
 
 type NavKeys = "home" | "team" | "investment advisory" | "contact";
 
-const navItems: NavKeys[] = ["home", "team", "investment advisory", "contact"];
+// const navItems: NavKeys[] = ["home", "team", "investment advisory", "contact"];
+const navItems: NavKeys[] = ["home", "investment advisory", "contact"];
 
 const navLinks: Record<NavKeys, string> = {
   home: "",

@@ -35,7 +35,7 @@ const crossBorderImg = [
   "Negros.png",
   "CFOCN.jpg",
   "ibs.png",
-  "Kith.png",
+  // "Kith.png",
 ];
 
 const chinaInvestImg = [
